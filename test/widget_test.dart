@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:my_flutter_app/model/Circle.dart';
-import 'package:my_flutter_app/model/User.dart';
+import 'package:example_flutter_app/reponsitory/Circle.dart';
+import 'package:example_flutter_app/reponsitory/User.dart';
 
 void main() {
   // Khởi tạo ánh xạ điểm của sinh viên

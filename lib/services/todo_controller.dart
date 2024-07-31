@@ -1,4 +1,4 @@
-import '../model/todo.dart';
+import '../reponsitory/todo.dart';
 
 class TodoController {
   List<Todo> _todos = [];

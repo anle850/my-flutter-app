@@ -1,4 +1,5 @@
-import 'package:my_flutter_app/model/Person.dart';
+
+import 'Person.dart';
 
 class User extends Person{
   int height;
