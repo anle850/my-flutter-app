@@ -14,16 +14,19 @@ class CounterPage extends StatelessWidget {
       body: Center(
         child: BlocBuilder<CounterBloc, CounterState>(
           builder: (context, state) {
-            return (state.count == 0 ? Text(
-              '${state.count}',
-              style: const TextStyle(fontSize: 36),
-            ) : IconButton(
-                icon: Icon(Icons.add),
-                onPressed: () {
-                  if (state.count == 0) {
-                    print("kss");
-                  }
-                }));
+            return Text(
+                '${state.count}',
+                style: const TextStyle(fontSize: 36));
+            //   (state.count == 0 ? Text(
+            //   '${state.count}',
+            //   style: const TextStyle(fontSize: 36),
+            // ) : IconButton(
+            //     icon: Icon(Icons.add),
+            //     onPressed: () {
+            //       if (state.count == 0) {
+            //         print("kss");
+            //       }
+            //     }));
           },
         ),
       ),
@@ -32,11 +35,13 @@ class CounterPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           FloatingActionButton(
+            heroTag: "increment_bloc_counter",
             child: const Icon(Icons.add),
             onPressed: () => context.read<CounterBloc>().add(IncrementEvent()),
           ),
           const SizedBox(height: 8),
           FloatingActionButton(
+            heroTag: "decrement_bloc_counter",
             child: const Icon(Icons.remove),
             onPressed: () => context.read<CounterBloc>().add(DecrementEvent()),
           ),

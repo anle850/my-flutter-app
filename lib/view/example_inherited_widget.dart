@@ -32,10 +32,11 @@ class ParentPage extends StatefulWidget {
 class _ParentPageState extends State<ParentPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return  Scaffold(
+      appBar: AppBar(title: const Text('Inherited example ')),
+      body: const Center(
         child: FamilyProvider(
-          // colorOfHair: 'black',
+          colorOfHair: 'black',
           child: ChildWidget(),
         ),
       ),

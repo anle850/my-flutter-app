@@ -1,64 +1,43 @@
+import 'package:example_flutter_app/view/counter_page.dart';
+import 'package:example_flutter_app/view/example_cubit_page.dart';
+import 'package:example_flutter_app/view/example_inherited_widget.dart';
+import 'package:example_flutter_app/view/stream_demo.dart';
+import 'package:example_flutter_app/view/todo_list_view.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage>
-    with SingleTickerProviderStateMixin {
-  var text = 'default';
-
-  Future<String> textFunc() {
-    return Future.delayed(const Duration(seconds: 2), (() => 'Hello world'));
-  }
-
-  bool isChanged = false;
-  bool pressed = false;
-  late AnimationController controller;
-
-  onPressed() async {
-    text = await textFunc();
-    setState(() {});
-  }
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    controller = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 2),
-    );
-  }
+class HomePage extends StatelessWidget {
+  HomePage({Key? key}) : super(key: key);
+  final List<Map<String, dynamic>> examples = [
+    {'title': 'Cubit example', 'page': const CubitExamplePage()},
+    {'title': 'Bloc example', 'page': const CounterPage()},
+    {'title': 'Todo list page', 'page': TodoListView()},
+    {'title': 'Inherited Widget example', 'page': const ParentPage()},
+    {'title': 'Stream example', 'page': const MyAppStream()},
+    // Add more examples here
+  ];
 
   @override
   Widget build(BuildContext context) {
-    double height = pressed ? 150 : 250;
-    Color color = pressed ? Colors.orangeAccent : Colors.blueAccent;
-
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          FutureBuilder(
-              future: textFunc(),
-              builder: ((context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const CircularProgressIndicator();
-                }
-                if (snapshot.hasData) {
-                  var value = snapshot.data.toString();
-                  return Text(value);
-                }
-                if (snapshot.hasError) {
-                  print(snapshot.error);
-                }
-                return Text('');
-              }))
-        ],
+      appBar: AppBar(
+        title: const Text('Learning Flutter App'),
+      ),
+      body: ListView.builder(
+        itemCount: examples.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(examples[index]['title']),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => examples[index]['page'],
+                  // tag: examples[index]['tag'],
+                ),
+              );
+            },
+          );
+        },
       ),
     );
   }

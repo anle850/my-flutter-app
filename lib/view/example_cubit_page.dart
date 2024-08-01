@@ -23,16 +23,19 @@ class CubitExamplePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 FloatingActionButton(
+                  heroTag: "cubit_add",
                   child: const Icon(Icons.add),
                   onPressed: () => context.read<ExampleCubit>().increment(),
                 ),
                 const SizedBox(height: 10),
                 FloatingActionButton(
+                  heroTag: "cubit_remove",
                   child: const Icon(Icons.remove),
                   onPressed: () => context.read<ExampleCubit>().decrement(),
                 ),
                 const SizedBox(height: 10),
                 FloatingActionButton(
+                  heroTag: "cubit_refresh",
                   child: const Icon(Icons.refresh),
                   onPressed: () => context.read<ExampleCubit>().reset(),
                 ),

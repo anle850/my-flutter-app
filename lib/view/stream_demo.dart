@@ -45,6 +45,7 @@ class _MyAppStreamState extends State<MyAppStream> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(title: const Text('Stream Example')),
       body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         TextField(
           onChanged: ((value) => logic.addValue(value)),
