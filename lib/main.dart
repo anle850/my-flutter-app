@@ -4,7 +4,6 @@ import 'package:example_flutter_app/view/home_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -22,6 +21,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Widget Examples',
         theme: ThemeData(
+          fontFamily: 'JetBrainsMono',
           primarySwatch: Colors.red,
         ),
         home: HomePage(),
@@ -30,7 +30,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 
 // BlocProvider(
 // create: (context) => ExampleCubit(),
