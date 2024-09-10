@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyUIWidget extends StatelessWidget {
@@ -5,69 +6,160 @@ class MyUIWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("UI examples")),
-      body: Container(
-        margin: const EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              "data acked kdslafj kidskin atlsd klass asdkfjkla adskfjdask"
-              "data ajkdk kdslafj kljdsk aklsdfj klasdjf asdkfjkla adskfjdask"
-              "data ajkdk kdslafj kljdsk aklsdfj klasdjf asdkfjkla adskfjdask",
-              textAlign: TextAlign.justify,
-              textDirection: TextDirection.ltr,
-              textScaleFactor: 1.2,
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                color: Colors.pink,
-                backgroundColor: Colors.black,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                fontStyle: FontStyle.italic,
-                // fontFamily: 'Times New Roman',
-                wordSpacing: 4,
-                letterSpacing: 2,
-                decoration: TextDecoration.underline,
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            RichText(
-              text: const TextSpan(
-                  // style: DefaultTextStyle.of(context).style,
-                  style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.w700,
-                      wordSpacing: 5.5),
-                  children: <TextSpan>[
-                    TextSpan(text: "Hello"),
-                    TextSpan(
-                        text: "My",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold)),
-                    TextSpan(text: "Friend")
-                  ]),
-            ),
-            const Card(
-              color: Colors.pink,
-              child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Text(
-                  'An Lee',
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-            )
-          ],
-        ),
+    return Stack(children: [
+      Container(
+        // alignment: Alignment.center,
+        color: Colors.blue,
       ),
-    );
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Card(
+            // color: Colors.white70,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.00),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                // mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 50,
+                    height: 50,
+                    color: Colors.yellow,
+                  ),
+                  const Flexible(
+                      flex: 4,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Nguyen Van Thanh',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            'Nguyen Van Thanh la mot tho kim hoan noi tieng',
+                            style: TextStyle(fontSize: 13),
+                          ),
+                        ],
+                      )),
+                  const Flexible(child: Icon(CupertinoIcons.play_arrow_solid)),
+                  const Flexible(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(CupertinoIcons.heart_fill),
+                        Text('1'),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+          Card(
+            // color: Colors.white70,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.00),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                // mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 50,
+                    height: 50,
+                    color: Colors.yellow,
+                  ),
+                  const Flexible(
+                      flex: 4,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Nguyen Van Thanh',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            'Nguyen Van Thanh la mot tho kim hoan noi tieng',
+                            style: TextStyle(fontSize: 13),
+                          ),
+                        ],
+                      )),
+                  const Flexible(child: Icon(CupertinoIcons.play_arrow_solid)),
+                  const Flexible(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(CupertinoIcons.heart_fill),
+                        Text('1'),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+          Card(
+            // color: Colors.white70,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.00),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                // mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 50,
+                    height: 50,
+                    color: Colors.yellow,
+                  ),
+                  const Flexible(
+                      flex: 4,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Nguyen Van Thanh',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            'Nguyen Van Thanh la mot tho kim hoan noi tieng',
+                            style: TextStyle(fontSize: 13),
+                          ),
+                        ],
+                      )),
+                  const Flexible(child: Icon(CupertinoIcons.play_arrow_solid)),
+                  const Flexible(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(CupertinoIcons.heart_fill),
+                        Text('1'),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ],
+      )
+    ]);
   }
 }

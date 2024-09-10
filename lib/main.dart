@@ -1,10 +1,15 @@
 import 'package:example_flutter_app/reponsitory/counter_bloc/counter_bloc.dart';
-import 'package:example_flutter_app/view/example_cubit_page.dart';
+import 'package:example_flutter_app/setup_locator.dart';
+// import 'package:example_flutter_app/view/example_cubit_page.dart';
 import 'package:example_flutter_app/view/home_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:example_flutter_app/view/dropdown_search.dart';
+import 'package:example_flutter_app/services/setup_dio.dart';
 
 void main() {
+  setupDio();
+  setup();
   runApp(const MyApp());
 }
 
